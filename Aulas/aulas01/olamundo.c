@@ -2,10 +2,6 @@
 #include<stdlib.h>
 
 int main(int argc, char const *argv[]){
-printf("asdfhasdfj:");
+printf("ola mundo:");
 return 0;
-}//asdasdasdasdasdasd
-//dsadasdasdasdasdasdasdas
-/*dsadsadasdasdasjaskfakglahdfgjksdaflghsdafljsdakfjsdklakfjasdkjf
-
-
+}
