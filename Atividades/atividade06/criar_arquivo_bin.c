@@ -4,7 +4,7 @@ int main(){system("color 7c");
 
 FILE *arq;
 
-arq = fopen("C:\\Users\\dinib\\Desktop\\atividades\\ativi6\\arquivoBIN.bin","rb");
+arq = fopen("C:\\Users\\dinib\\Desktop\\atividades\\ativi6\\dados.bin","rb");
 
 if (arq == NULL)
 {
