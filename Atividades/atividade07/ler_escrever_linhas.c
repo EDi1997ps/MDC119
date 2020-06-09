@@ -1,31 +1,40 @@
-#include "stdio.h"
-#include "stdlib.h"
-
-int main(void)
-{system("color 7c");
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+int main(){
 FILE *arq;
-char nome_e_matricula[40];
-//char matricula[10];
+int i=0;
+char nome[30];
+char matricula[10];
+arq= fopen("texto2.txt", "w");
+if (arq == NULL)  
+  {
+     printf("Problemas na abertura do arquivo\n");
+     return 0;
+}
 
-if((arq = fopen("C:\\Users\\dinib\\Desktop\\atividades\\ativi7\\Aluno2.txt", "w+"))== NULL)
-{
-perror("Descricao do erro:");
-exit(1);
+printf("matricula\n ");
+memset(matricula, '\0', sizeof(matricula));
+scanf("%s",matricula);
+
+while (strcmp("0", matricula)){
+    fputs(matricula, arq);
+
+    printf("nome\n ");
+    memset(nome, '\0', sizeof(nome));
+    scanf("%s",nome);
+    fputs(nome, arq);
+
+    printf("matricula\n ");
+    memset(matricula, '\0', sizeof(matricula));
+    scanf("%s",matricula);   
 }
-while(1)
-{
-printf("Digite o Nome e matricula || ou sair(para sair)||Aperte espaco para nome e matricula:\n");
-	fgets(nome_e_matricula, 40, stdin);
-	nome_e_matricula[strlen(nome_e_matricula) - 1] = '\0';	
-if(strcmp("sair", nome_e_matricula))
-{
-//fprintf(arq, "%s\n", nome_e_matricula);
-fprintf(arq, "[%s]\n", nome_e_matricula);
-}
-else{	
-break;
-}}
 fclose(arq);
+arq=fopen("texto2.txt","r");
+while(fgets(matricula,10,arq)!=NULL){
+    printf("%s", matricula); 
+}
 
 return 0;
+
 }
